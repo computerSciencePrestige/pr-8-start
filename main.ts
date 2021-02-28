@@ -1,15 +1,23 @@
 basic.forever(function () {
-	
-})
-basic.forever(function () {
-    if (input.lightLevel() < 100) {
-        basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            `)
+    if (input.lightLevel() < 75) {
+        if (input.buttonIsPressed(Button.A)) {
+            basic.showLeds(`
+                # # # # .
+                # # # # .
+                # # # . #
+                # # . . #
+                . . # # #
+                `)
+        }
+        if (input.buttonIsPressed(Button.B)) {
+            basic.showLeds(`
+                . . . . #
+                . . . . #
+                . . . # .
+                . . # # .
+                # # . . .
+                `)
+        }
     } else {
         basic.showLeds(`
             . . . . .
